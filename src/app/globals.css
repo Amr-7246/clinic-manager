@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400..900&family=Rowdies:wght@300;400;700&family=Shafarik&family=Yuji+Mai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Mozilla+Headline:wght@200..700&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+/* ~ --- General UI Elements --- */
+      --bg: #ffffff;
+      --surface: #f3f4f6;    /** Background for cards, containers, sections (slightly off-white) */
+      --text-primary: #222222;
+      --text-secondary: #7c7c7c;
+      --text-inverted: #ffffff; /** Text color to use on dark/primary backgrounds */
+      --border-color: rgb(211, 229, 255);
+      --shadow-color: rgba(0, 0, 0, 0.1);
+    /* ~ --- General UI Elements --- */
+    /* ~ --- Min --- */
+      --main:rgb(0, 23, 36);
+      --second:rgb(39, 39, 39);
+      --theard: #ffffff;
+      --text: #ffffff;
+      --second-text: #3a3a3a;
+      --btn: #3895d3;
+      --shadow: #000000;
+      --border: rgb(0, 195, 255);
+      --input-bg: rgba(255, 255, 255, 0);
+      --from: #a3a3a3;
+      --via: #00eeff;
+      --to: #a3a3a3;
+    /* ~ --- Min --- */
+    /* ~ --- Primary Palette --- */
+      --color-primary: #3b82f6;           /** for main actions */
+      --color-primary-light: #60a5fa;     /** Lighter shade for hover/focus */
+      --color-primary-dark: #2563eb;      /** Darker shade for active/pressed */
+      --color-accent: #10b981;            /** A contrasting green for highlights, success */
+    /* ~ --- Primary Palette --- */
+    /* ~ --- Semantic Colors --- */
+      --color-success: #22c55e;
+      --color-warning: #facc15;
+      --color-error: #ef4444;
+      --color-info: #3b82f6;
+    /* ~ --- Semantic Colors --- */
+    /* ~ --- Input Fields --- */
+      --input-background: #ffffff;
+      --input-border: #d1d5db;
+      --input-text: #222222;
+      --input-placeholder: #a3a3a3;
+    /* ~ --- Input Fields --- */
+    /* ~ --- Gradients --- */
+      --gradient-from: var(--color-primary);
+      --gradient-via: var(--color-accent);
+      --gradient-to: var(--color-primary-dark);
+    /* ~ --- Gradients --- */
+    /* ~ --- Buttons --- */
+      --button-primary-bg: #3b82f6;
+      --button-primary-text: #ffffff;
+      --button-primary-hover-bg: #60a5fa;
+      --button-primary-active-bg: #2563eb;
+
+      --button-secondary-bg: #e5e7eb; /* Lighter gray for secondary actions */
+      --button-secondary-text: #222222;
+      --button-secondary-hover-bg: #d1d5db;
+      --button-secondary-active-bg: #9ca3af;
+
+      --button-outline-bg: transparent;
+      --button-outline-text: #3b82f6;
+      --button-outline-border: #3b82f6;
+      --button-outline-hover-bg: rgba(59, 130, 246, 0.1);
+    /* ~ --- Buttons --- */
+
+}
+
+@layer base {
+
+  :root {
+    --bg: #cdc0ff;
+    --surface: #5c3ad8;
+    --hovered: #aaaaaa;
+    --btn_I: #5c3ad8;
+    --btn_II: #ffffff;
+    --text: #1d1d1d;
+    --text-secondary: #7c7c7c;
+    --text-inverted: #ffffff;
+    --border: rgb(49, 49, 49);
+    --shadow: rgba(0, 0, 0, 0.1);
+    --input: #ffffff;
+    --from: #cdc0ff;
+    --via: #5c3ad8;
+    --to: #cdc0ff;
+  }
+
+  .dark {
+      --bg: #0c081d;
+      --surface: #5c3ad8;
+      --hovered: #888888;
+      --btn_I: #5c3ad8;
+      --btn_II: #ffffff;
+      --text: #202020;
+      --text-secondary: #7c7c7c;
+      --text-inverted: #ffffff;
+      --border: rgb(49, 49, 49);
+      --shadow: rgba(0, 0, 0, 0.1);
+      --input: #ffffff;
+      --from: #cdc0ff;
+      --via: #5c3ad8;
+      --to: #cdc0ff;
+  }
+
+}
+
+
+@layer base {
+
+  /* & Start Global Repeated utilites  */
+  body {
+    /* font-family: "Rubik Distressed", system-ui; */
+    font-weight: 400;
+    font-style: normal;
+    font-family: "Mozilla Headline", sans-serif !important ;
+    @apply bg-[var(--bg)] font-bold duration-800 ;
+  }
+  .flex-center {
+    @apply flex justify-center items-center
+  }
+  p {
+    @apply text-[var(--text)]
+  }
+  .page {
+    @apply w-[95%] md:w-[85%] max-w-[1200px] mx-auto py-10 min-h-[60vh];
+  }
+  .btn {
+  font-family: "Winky Rough", sans-serif;
+    @apply cursor-pointer duration-[800ms] px-6 py-3 bg-[var(--btn_I)] text-[var(--text)]  rounded-lg border border-transparent hover:text-[var(--btn_I)] hover:border-[var(--btn_I)]  hover:bg-transparent  font-bold shadow-lg hover:shadow-sky-400/20 transition-all;
+  }
+  .btn_I {
+    font-family: "Winky Rough", sans-serif;
+    @apply cursor-pointer  duration-[800ms] px-6 py-3 bg-[var(--btn_I)] text-[var(--text)]  rounded-lg border border-transparent hover:text-[var(--btn_I)] hover:border-[var(--btn_I)]  hover:bg-transparent  font-bold shadow-lg hover:shadow-sky-400/20 transition-all;
+  }
+  .btn_II {
+    font-family: "Winky Rough", sans-serif;
+    @apply cursor-pointer duration-[800ms] px-6 py-3 bg-[var(--btn_II)] text-[var(--text)]  rounded-lg border border-transparent hover:text-[var(--btn_II)] hover:border-[var(--btn_II)]  hover:bg-transparent  font-bold shadow-lg hover:shadow-sky-400/20 transition-all;
+  }
+  .input {
+    @apply p-2 border border-black rounded-lg ;
+  }
+
+  .form-label {
+    @apply block text-[var(--text)] text-sm font-medium mb-2 font-['Dosis'];
+  }
+
+  .form-container {
+    @apply backdrop-blur-sm bg-[var(--main)] p-6 rounded-xl
+    border border-[var(--border)] shadow-lg w-full;
+  }
+
+  .form-group {
+    @apply mb-4 relative flex flex-col gap-3;
+  }
+/* & End Global Repeated utilites  */
+/* & Auth Page Styles */
+  .auth-container {
+    @apply min-h-screen flex justify-center items-center bg-[var(--bg)] p-4;
+  }
+
+  .auth-card {
+    @apply max-w-md w-full mx-auto;
+  }
+
+  .auth-title {
+    @apply text-2xl font-bold text-[var(--text)] mb-6 text-center font-['Dosis'];
+  }
+
+  .auth-label {
+    @apply mt-1 ;
+  }
+
+  .auth-button {
+    @apply w-full mt-4;
+  }
+
+  .social-login-button {
+    @apply flex items-center justify-center gap-2 w-full py-3 px-4 rounded-lg
+    border border-[var(--border)] text-[var(--text)] font-['Dosis'] font-medium
+    transition-all duration-300 hover:bg-[var(--surface)] hover:border-[var(--border)];
+  }
+
+  .divider {
+    @apply relative my-6;
+  }
+
+  .divider::before {
+    @apply content-[''] absolute left-0 top-1/2 w-full h-[1px] bg-[var(--border)];
+  }
+
+  .divider-text {
+    @apply relative bg-[var(--main)] px-4 text-[var(--text)] text-sm;
+  }
+
+  .auth-link {
+    @apply text-[var(--btn)] hover:text-[var(--color-primary-light)] transition-colors duration-300;
+  }
+
+  .error-message {
+    @apply text-[var(--color-error)] text-sm mt-1;
+  }
+}
+/* & Auth Page Styles */
+
