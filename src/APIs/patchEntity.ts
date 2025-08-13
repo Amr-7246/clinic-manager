@@ -7,7 +7,7 @@ const usePatchEntity = <T, D>(entity: string) => {
   const queryClient = useQueryClient();
 
   return useMutation<T, AxiosError, D>({
-    mutationFn: async (data: any,  id: any ) => {
+    mutationFn: async ({data, id} : any ) => {
       const response = await axios.patch(`${BackEnd_URL}/${entity}/${id}`, data);
       return response.data as T;
     },

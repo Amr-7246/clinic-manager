@@ -13,7 +13,7 @@ import { IPatient } from "@/types/patientTypes";
 
 export default function Page() {
   const { mutate: logOut } = useLogOut("clicnic-manager/auth/logout");
-  const { mutate: editInfo } = usePatchEntity("clicnic-manager/auth/logout"); //editInfo(UserInfo?._id)
+  const { mutate: editInfo } = usePatchEntity("clicnic-manager/patient"); 
   const { mutate: signOut } = useSignOut('clicnic-manager/patient');
   const { UserInfo } = useUserInfoContext();
   const [EditedUserData, setEditedUserData] = useState<IPatient | null>(null);
@@ -87,7 +87,7 @@ export default function Page() {
 
               <button
                 onClick={() => {
-                  if (EditedUserData) editInfo(EditedUserData);
+                  if (EditedUserData) editInfo({data: EditedUserData, id:UserInfo?._id});
                   setShowEditCard(false);
                 }}
                 className="cursor-pointer bg-purple-600 hover:bg-purple-700 text-white rounded-lg py-2 mt-2 transition"

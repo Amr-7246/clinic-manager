@@ -9,7 +9,7 @@ const content = textContent
 
 const EditDoctor = ({setWhoEditied, WhoEditied} : {setWhoEditied:any , WhoEditied:doctor|null} ) => {
   // const [WhoEditied, setWhoEditied] = useState<doctor|null>(null)
-  const {mutate: editDoctor} = usePatchEntity('clinic-manager/doctors', WhoEditied?._id)
+  const {mutate: editDoctor} = usePatchEntity('clinic-manager/doctors')
   
   const formFields: feild[] = [
     {
@@ -115,7 +115,7 @@ const EditDoctor = ({setWhoEditied, WhoEditied} : {setWhoEditied:any , WhoEditie
         toast.error("Please fill all required fields")
         return
       }
-      editDoctor(WhoEditied)
+      editDoctor({data: WhoEditied, id: WhoEditied?._id})
       console.log('Here is the id Amr . . ' + WhoEditied._id)
       setWhoEditied(null)
     } else {
