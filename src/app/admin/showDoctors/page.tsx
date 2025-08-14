@@ -20,7 +20,7 @@ const page = () => {
           <div className='flex flex-col gap-5' >
             <AnimatedCard alt={doctors[0].image}  className='' id={card._id} key={idx} img={card.image} title={card.name} discription={card.speciality} state={'avalible'} />
             <div className={'flex gap-3'}>
-              <button onClick={() => deleteDoctor(card?._id)} className='btn_I w-full'>Delete</button>
+              <button onClick={() => {if(card._id) deleteDoctor(card?._id)}} className='btn_I w-full'>Delete</button>
               <button onClick={() => setWhoEditied(card)} className='btn_II'>Edit</button>
             </div>
           </div>
