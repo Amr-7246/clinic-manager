@@ -49,7 +49,7 @@ const page = () => {
                     {appo._id}
                     <button className='btn_I' >cancel the Appointment</button>
                   </div>
-                )) ?? <span></span>}
+                )) ?? <span>there is no patient Yet</span>}
               </div>
             </div>
           </div>

@@ -95,7 +95,7 @@ const AdminAppointments = () => {
                   </p>
 
                   <button
-                    onClick={() => deleteAppointment(appointment?._id)}
+                    onClick={() => appointment._id && deleteAppointment(appointment._id)}
                     className="mt-3 px-4 py-2 cursor-pointer bg-rose-500 text-white rounded-md hover:bg-rose-600 transition w-full"
                   >
                     Cancel Appointment
