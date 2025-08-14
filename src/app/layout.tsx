@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import GlobalNav from "./components/navigation/GlobalNavBar";
 import QueryProviders from "@/lib/ReactQuery/QueryProvider";
-import { ThemeProvider } from "../tools/Themes/ThemeContext";
 import { Toaster } from "react-hot-toast";
 import { UserInfoContextProvider } from "@/context/userInfoContext";
 import LayerMask from './components/LayerMask'
@@ -23,16 +22,14 @@ export default async function RootLayout({ children, params }: Readonly<{ childr
       <body className={` pt-[10vh]`}>
         <DoctorsContextProvider>
           <UserInfoContextProvider>
-            <ThemeProvider defaultTheme="light" storageKey="ui-theme">
-              <QueryProviders>
-                <LayerMask />
-                <GlobalNav />
-                <div className={`${pathname.includes('admin') ? "" : "page"}`}>
-                  <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
-                  {children}
-                </div>
-              </QueryProviders>
-            </ThemeProvider>
+            <QueryProviders>
+              <LayerMask />
+              <GlobalNav />
+              <div className={`${pathname.includes('admin') ? "" : "page"}`}>
+                <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
+                {children}
+              </div>
+            </QueryProviders>
           </UserInfoContextProvider>
         </DoctorsContextProvider>
       </body>
