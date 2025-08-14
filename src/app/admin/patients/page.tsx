@@ -44,12 +44,12 @@ const page = () => {
               <p><strong>Email:</strong> {patient?.email}</p>
               <p><strong>Phone:</strong> {patient?.phoneNumber}</p>
               <div>
-                {patient?.appointments.map((appo, idx) => (
+                {patient?.appointments?.map((appo, idx) => (
                   <div key={idx} >
                     {appo._id}
                     <button className='btn_I' >cancel the Appointment</button>
                   </div>
-                ))}
+                )) ?? <span></span>}
               </div>
             </div>
           </div>
