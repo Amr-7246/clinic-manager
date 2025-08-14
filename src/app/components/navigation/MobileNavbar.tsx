@@ -5,10 +5,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React, { useEffect, useRef, useState } from 'react'
 import { IoCloseOutline } from "react-icons/io5";
-import toast from 'react-hot-toast';
-import { ThemeToggle } from '../../../tools/Themes/themeToggle';
-import { useLogOut } from '../../../tools/Auth/Auth/logOut';
-import LanguageSwitcher from '../../../tools/MultipleLangSupport/LanguageSwitcher';
 import AuthBtn from './AuthBtn';
 import { useUserInfoContext } from '@/context/userInfoContext';
 import { assets } from '@/pub/assets/assets_frontend';
@@ -17,8 +13,6 @@ import textContent from "@/AppContent.json"
 
 const MobileNavbar = () => {
   const content = textContent
-  const { mutate : logOut } = useLogOut()
-      // const { mutate : DeleteUser } = useSignOut()
       const { UserInfo : user } = useUserInfoContext()
       const curentPath = usePathname()
       const navRef = useRef<HTMLDivElement>(null);

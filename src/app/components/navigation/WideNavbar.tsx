@@ -1,7 +1,5 @@
 "use client"
 
-import { NavOptions } from '@/app/Data/NavOptions'
-import { ThemeToggle } from '@/tools/Themes/themeToggle'
 import Link from 'next/link'
 import React from 'react'
 import { usePathname } from 'next/navigation'
